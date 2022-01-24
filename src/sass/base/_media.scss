@@ -7,6 +7,13 @@
          align-items: center;
       }
    }
+   .consultation {
+   }
+   .title {
+      &_left {
+         font-size: 29px;
+      }
+   }
 }
 @media (max-width: 768px) {
    .header {
@@ -69,6 +76,12 @@
          height: 45px;
          font-size: 14px;
       }
+
+      &_submit {
+         width: 300px;
+         height: 55px;
+         font-size: 16px;
+      }
    }
    .header {
       &__logo {
@@ -78,8 +91,21 @@
          font-size: 14px;
       }
    }
+   .consultation {
+      padding: 50px 0;
+      min-height: 550px;
+      &__desc {
+         font-size: 14px;
+         text-align: center;
+         margin-top: 35px;
+      }
+   }
    .title {
       font-size: 21px;
+      &_left {
+         font-size: 15px;
+         text-align: center;
+      }
    }
    .advantages {
       &__wrapper {
