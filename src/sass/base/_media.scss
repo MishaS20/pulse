@@ -16,6 +16,11 @@
    }
 }
 @media (max-width: 768px) {
+   .carousel {
+      &__inner {
+         width: 650px;
+      }
+   }
    .header {
       &__official {
          display: none;
@@ -50,6 +55,11 @@
    }
 }
 @media (max-width: 576px) {
+   .carousel {
+      &__inner {
+         width: 300px;
+      }
+   }
    .promo {
       min-height: 400px;
       padding-bottom: 65px;
