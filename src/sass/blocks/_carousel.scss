@@ -1,50 +1,46 @@
 .carousel {
    padding: 82px 0;
-   &__inner {
+   .tns-outer {
       width: 750px;
       margin: 0 auto;
       position: relative;
       img {
          width: 100%;
       }
-      .slick-prev,
-      .slick-next {
+   }
+   .prev,
+   .next {
+      border: none;
+      background-color: #ffff;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -10px;
+      img {
+         width: 30px;
+         height: 50px;
+      }
+   }
+   .next {
+      left: auto;
+      right: -10px;
+   }
+   [data-controls="next"],
+   [data-controls="prev"] {
+      display: none;
+   }
+   .tns-nav {
+      text-align: center;
+      button {
+         margin: 0 5px;
+         width: 15px;
+         height: 15px;
+         border-radius: 50%;
          border: none;
-         background-color: #ffff;
-         position: absolute;
-         top: 50%;
-         transform: translateY(-50%);
-         left: -66px;
-         img {
-            width: 30px;
-            height: 50px;
-         }
+         background-color: rgb(2, 2, 2);
       }
-      .slick-next {
-         left: auto;
-         right: -66px;
-      }
-      .slick-dots {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         li {
-            list-style: none;
-            margin: 0 10px;
-         }
-         li.slick-active {
-            button {
-               background-color: rgb(209, 127, 127);
-            }
-         }
-         button {
-            font-size: 0;
-            width: 10px;
-            height: 10px;
-            background-color: rgb(107, 91, 91);
-            border-radius: 50%;
-            border: none;
-         }
+      .tns-nav-active {
+         background-color: $main-color;
       }
    }
 }
