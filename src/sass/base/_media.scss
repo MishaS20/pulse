@@ -2,6 +2,11 @@
    .container {
       padding: 0 10px;
    }
+   .reviews {
+      &__body {
+         margin: 0px 25px;
+      }
+   }
    .promo {
       &__wrapper {
          align-items: center;
@@ -25,6 +30,17 @@
    }
 }
 @media (max-width: 768px) {
+   .reviews {
+      &__item {
+         flex-direction: column;
+         align-items: center;
+         border: none;
+         padding-bottom: 10px;
+      }
+      &__body {
+         margin-top: 20px;
+      }
+   }
    .catalog {
       &__tabs {
          margin-top: 50px;
@@ -77,6 +93,15 @@
    }
 }
 @media (max-width: 576px) {
+   .reviews {
+      &__body {
+         text-align: center;
+         margin: 0 10px;
+      }
+      &__desc {
+         margin-top: 10px;
+      }
+   }
    .catalog {
       &__content {
          margin-top: 45px;
