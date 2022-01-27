@@ -7,15 +7,33 @@
          align-items: center;
       }
    }
-   .consultation {
-   }
    .title {
       &_left {
          font-size: 29px;
       }
    }
+   .catalog {
+      &__content {
+         &_active {
+            display: flex;
+            justify-content: center;
+         }
+      }
+      &-item {
+         margin: 0px 25px 20px 25px;
+      }
+   }
 }
 @media (max-width: 768px) {
+   .catalog {
+      &__tabs {
+         margin-top: 50px;
+      }
+      &__tab {
+         font-size: 15px;
+         width: 160px;
+      }
+   }
    .carousel {
       .prev,
       .next {
@@ -59,6 +77,29 @@
    }
 }
 @media (max-width: 576px) {
+   .catalog {
+      &__content {
+         margin-top: 45px;
+      }
+      &__tabs {
+         margin-top: 40px;
+      }
+      &__tab {
+         height: 30px;
+         font-size: 10px;
+         width: 150px;
+         line-height: 31px;
+      }
+      &-item {
+         &__content {
+            transform: translateX(-120%);
+            &_active {
+               transform: translateX(0%);
+            }
+         }
+      }
+   }
+
    .carousel {
       .tns-outer {
          width: 300px;
@@ -89,6 +130,9 @@
          width: 211px;
          height: 45px;
          font-size: 14px;
+      }
+      &_mini {
+         width: 90px;
       }
 
       &_submit {

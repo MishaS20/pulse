@@ -13,3 +13,59 @@ document.querySelector('.prev').addEventListener('click', function () {
 document.querySelector('.next').addEventListener('click', function () {
    slider.goTo('next');
 })
+
+// !Tabs
+function removeClass(items, className) {
+   items.forEach(item => item.classList.remove(className));
+};
+
+function addClass(items, idx, className) {
+   items[idx].classList.add(className);
+};
+
+function toggleSlide(items) {
+   function swapClass(removeNameClass, addNameClass, parentElement, idx) {
+      parentElement.classList.remove(removeNameClass);
+      let catalogList = parentElement.parentNode.children[idx];
+      catalogList.classList.add(addNameClass);
+   };
+
+   items.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+         e.preventDefault();
+         let parentElement = item.parentNode;
+         let classNameParent = parentElement.className;
+
+         if (classNameParent.indexOf('catalog-item__content_active') != -1) {
+            swapClass('catalog-item__content_active', 'catalog-item__list_active', parentElement, 1);
+         } else {
+            swapClass('catalog-item__list_active', 'catalog-item__content_active', parentElement, 0);
+         }
+
+      })
+   })
+};
+
+function toggleTabs(tabs, tabsContent) {
+   for (let i = 0; i < tabs.length; i++) {
+      let currentTab = tabs[i];
+
+      currentTab.addEventListener('click', function (e) {
+         let clickTab = currentTab.getAttribute('data-tab');
+         removeClass(tabs, 'catalog__tab_active');
+         removeClass(tabsContent, 'catalog__content_active');
+         addClass(tabs, clickTab, 'catalog__tab_active');
+         addClass(tabsContent, clickTab, 'catalog__content_active');
+      });
+   }
+};
+
+const tabNavs = document.querySelectorAll('.catalog__tab');
+const tabPanes = document.querySelectorAll('.catalog__content');
+const catalogLinks = document.querySelectorAll('.catalog-item__link');
+
+
+toggleSlide(catalogLinks);
+toggleTabs(tabNavs, tabPanes);
+
+
