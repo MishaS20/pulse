@@ -119,6 +119,11 @@
       }
    }
    .footer {
+      height: 440px;
+      iframe {
+         height: 440px;
+      }
+
       &__info {
          width: 200px;
          height: 200px;
