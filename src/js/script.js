@@ -1,3 +1,4 @@
+//* Slider
 const slider = tns({
    container: '.carousel__inner',
    items: 1,
@@ -36,7 +37,7 @@ function toggleSlide(items) {
          let parentElement = item.parentNode;
          let classNameParent = parentElement.className;
 
-         if (classNameParent.indexOf('catalog-item__content_active') != -1) {
+         if (~classNameParent.indexOf('catalog-item__content_active')) {
             swapClass('catalog-item__content_active', 'catalog-item__list_active', parentElement, 1);
          } else {
             swapClass('catalog-item__list_active', 'catalog-item__content_active', parentElement, 0);
@@ -67,5 +68,30 @@ const catalogLinks = document.querySelectorAll('.catalog-item__link');
 
 toggleSlide(catalogLinks);
 toggleTabs(tabNavs, tabPanes);
+
+//? Modal
+
+const buttonsConsultaton = document.querySelectorAll('[data-modal="consultation"]'),
+   buttonsOrder = document.querySelectorAll('.button_mini');
+
+const blockOverlay = document.querySelector('.overlay'),
+   modalClose = document.querySelectorAll('.modal__close'),
+   modalConsultation = document.getElementById('consultation'),
+   modalOrder = document.getElementById('order'),
+   modalThanks = document.getElementById('thanks');
+
+function showAndCloseModal(items, value, secondBlock, firstBlock = blockOverlay) {
+   items.forEach(function (item) {
+      item.addEventListener('click', function () {
+         firstBlock.style.display = value;
+         secondBlock.style.display = value;
+      })
+   });
+}
+showAndCloseModal(modalClose, "none", modalConsultation)
+showAndCloseModal(buttonsConsultaton, 'block', modalConsultation,)
+showAndCloseModal(buttonsOrder, 'block', modalOrder,)
+
+
 
 

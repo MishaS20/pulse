@@ -93,6 +93,50 @@
    }
 }
 @media (max-width: 576px) {
+   .modal {
+      width: 280px;
+      &__subtitle {
+         font-size: 15px;
+      }
+      &__close {
+         top: -35px;
+         left: 50%;
+         right: auto;
+         transform: translateX(-50%);
+      }
+   }
+   .feed-form {
+      &_mt25 {
+         width: 200px;
+
+         input {
+            text-align: center;
+         }
+         button {
+            width: 200px;
+            height: 45px;
+         }
+      }
+   }
+   .footer {
+      &__info {
+         width: 200px;
+         height: 200px;
+         font-size: 10px;
+      }
+      &__address {
+         font-size: 11px;
+      }
+      &__phone {
+         margin-top: 13px;
+         font-size: 12px;
+      }
+      &__social-item {
+         width: 35px;
+         height: 35px;
+         margin: 0 8px;
+      }
+   }
    .reviews {
       &__body {
          text-align: center;
