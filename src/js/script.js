@@ -38,9 +38,9 @@ function toggleSlide(items) {
          let classNameParent = parentElement.className;
 
          if (~classNameParent.indexOf('catalog-item__content_active')) {
-            swapClass('catalog-item__content_active', 'catalog-item__list_active', parentElement, 1);
+            swapClass('catalog-item__content_active', 'catalog-item__more_active', parentElement, 1);
          } else {
-            swapClass('catalog-item__list_active', 'catalog-item__content_active', parentElement, 0);
+            swapClass('catalog-item__more_active', 'catalog-item__content_active', parentElement, 0);
          }
 
       })

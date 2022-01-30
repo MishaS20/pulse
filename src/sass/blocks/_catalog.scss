@@ -3,6 +3,7 @@
    .container {
       max-width: 970px;
    }
+
    &__tabs {
       display: flex;
       justify-content: center;
@@ -55,6 +56,7 @@
       padding: 20px 20px 25px 20px;
       margin: 0 10px 20px 10px;
       overflow: hidden;
+
       &__wrapper {
          display: flex;
          width: calc(200% + 40px);
@@ -69,14 +71,12 @@
             margin-right: 20px;
          }
       }
-      &__list {
+      &__more {
          width: 50%;
          padding-left: 0;
          margin-left: 20px;
          transform: translateX(0%);
-         list-style-type: none;
          transition: 0.5s all;
-         margin-bottom: 0;
          padding-right: 0;
          padding-left: 19px;
          &_active {
@@ -84,6 +84,11 @@
             margin-left: 0px;
             padding-right: 20px;
          }
+      }
+      &__list {
+         list-style-type: none;
+         margin-bottom: 0;
+         padding-left: 0;
          li {
             position: relative;
             font-size: 14px;
@@ -94,7 +99,7 @@
             &:before {
                content: "";
                position: absolute;
-               left: -14px;
+               left: -19px;
                top: 5px;
                width: 5px;
                height: 5px;
@@ -124,8 +129,10 @@
          color: #0d0d0d;
       }
       &__link {
+         text-decoration-skip-ink: none;
          display: block;
          text-align: center;
+         text-transform: uppercase;
          margin-top: 17px;
          font-size: 14px;
          font-weight: 500;
@@ -138,7 +145,7 @@
             position: absolute;
             bottom: 0;
             left: 50%;
-            transform: translateX(calc(-50% - 19px));
+            transform: translateX(calc(-50% - 14px));
          }
       }
       hr {
