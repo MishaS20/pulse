@@ -127,7 +127,58 @@ $(document).ready(function () {
    validatForms("#consultation form");
    validatForms("#order  form");
    validatForms("#consultation-form");
+
+   $("input[name=phone]").mask("+7 (999) 999-99-99");
+
+   $('form').submit(function (e) {
+      e.preventDefault();
+      $.ajax({
+         type: "POST",
+         url: "mailer/smart.php",
+         data: $(this).serialize()
+      }).done(function () {
+         $(this).find("input").val("");
+         $('#consultation, #order').fadeOut();
+         $('.overlay, #thanks').fadeIn('slow');
+         $('form').trigger('reset');
+      });
+      return false;
+   });
+
+
+   //! Pageup
+   $(window).scroll(function () {
+      if ($(this).scrollTop() > 1600) {
+         $(".pageup").fadeIn();
+      } else {
+         $(".pageup").fadeOut();
+      }
+   });
+
+
+   $("a[href^='#']").on('click', function (event) {
+
+      if (this.hash !== "") {
+         event.preventDefault();
+
+         var hash = this.hash;
+
+         $('html, body').animate({
+            scrollTop: $(hash).offset().top
+         }, 0, function () {
+
+            window.location.hash = hash;
+         });
+      }
+   });
 })
+
+var wow = new WOW(
+   {
+      mobile: false
+   }
+);
+wow.init();
 
 
 

@@ -93,6 +93,9 @@
    }
 }
 @media (max-width: 576px) {
+   .pageup {
+      right: -100px;
+   }
    .modal {
       width: 280px;
       &__subtitle {

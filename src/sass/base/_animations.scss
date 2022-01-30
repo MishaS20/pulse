@@ -1,0 +1,22 @@
+@keyframes heartbeat {
+   from {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(1.2);
+   }
+   to {
+      transform: scale(1);
+   }
+}
+@keyframes coup {
+   from {
+      transform: rotate(0deg);
+   }
+   50% {
+      transform: rotate(45deg);
+   }
+   to {
+      transform: rotate(0);
+   }
+}
