@@ -51,6 +51,10 @@
          box-shadow: 0 0 20px #eee8e8;
          color: #ffffff;
       }
+      img {
+         display: block;
+         height: 26px;
+      }
    }
    &__social {
       display: flex;
